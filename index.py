@@ -5,6 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    a = 2
+    b = 5
+    print(a * b)
     return 'index'
 
 

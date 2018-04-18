@@ -1,5 +1,5 @@
 idea
 *.py[cod]
-log/log*
+logs/log*
 migrations
 

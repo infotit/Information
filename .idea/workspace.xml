@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05d70c7f-3614-47fb-8d7f-095a6b406efd" name="Default" comment="增加模型，迁移数据库，添加静态文件">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Information.iml" afterPath="$PROJECT_DIR$/.idea/Information.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/utils/captcha/fonts/Arial.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/utils/captcha/fonts/Georgia.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/utils/captcha/fonts/actionj.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/CCPRestSDK.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/sms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/xmltojson.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/modules/passport/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/modules/passport/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/utils/captcha/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/utils/captcha/captcha.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/info/static/news/html/index.html" afterPath="$PROJECT_DIR$/info/templates/news/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/html/404.html" afterPath="$PROJECT_DIR$/info/static/news/html/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/html/index.html" afterPath="$PROJECT_DIR$/info/static/news/html/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -101,14 +111,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+            <state relative-caret-position="417">
+              <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info/libs/yuntongxun/sms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/info/modules/passport/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info/modules/passport/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,8 +190,8 @@
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a704f602-4407-42cc-ac79-255adb50767b/console.sql" />
         <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/info/__init__.py" />
         <option value="$PROJECT_DIR$/info/modules/passport/view.py" />
+        <option value="$PROJECT_DIR$/info/__init__.py" />
         <option value="$PROJECT_DIR$/info/modules/passport/__init__.py" />
         <option value="$PROJECT_DIR$/info/modules/passport/views.py" />
       </list>
@@ -204,6 +244,32 @@
               <item name="info" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Information" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="passport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Information" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Information" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Information" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -218,12 +284,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/info/static/news/html" />
       <recent name="$PROJECT_DIR$/info/templates/news" />
+      <recent name="$PROJECT_DIR$/info/static/news/html" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/info/utils" />
       <recent name="$PROJECT_DIR$/info/libs" />
+      <recent name="$PROJECT_DIR$/info/utils" />
       <recent name="$PROJECT_DIR$/info" />
     </key>
   </component>
@@ -629,6 +695,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/info/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/info/libs/yuntongxun/sms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -647,19 +723,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/info/modules/passport/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="104">
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

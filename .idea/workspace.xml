@@ -377,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524333549186</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="增加注册逻辑">
+      <created>1524333587122</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1524333587122</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -453,7 +460,8 @@
     <MESSAGE value="增加模型，迁移数据库，添加静态文件" />
     <MESSAGE value="添加第三方工具，添加模板文件夹，添加蓝图passport_blu" />
     <MESSAGE value="添加favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加favicon" />
+    <MESSAGE value="增加注册逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加注册逻辑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -6,6 +6,7 @@ class Config(object):
     SECRET_KEY = 'Q9zeIxdeJlnHj0tdohhK42Iq3I1arhbDRysgnfQfhxR5irg1qqlEurEBeFtCWAJp'
     SQLALCHEMY_DATABASE_URI = 'mysql://root:a@127.0.0.1:3306/information27'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     REDIS_HOST = '127.0.0.1'
     REDIS_PORT = 6379
     SESSION_REDIS = StrictRedis(host=REDIS_HOST, port=REDIS_PORT)

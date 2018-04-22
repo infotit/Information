@@ -13,6 +13,56 @@ from info.utils.captcha.captcha import captcha
 from info import constants
 
 
+@passport_blu.route('/logout')
+def log():
+
+    session.pop("user_id", None)
+    session.pop("nick_name", None)
+    session.pop("mobile", None)
+    return jsonify(errno=RET.OK, errmsg="退出成功")
+
+
+@passport_blu.route('/login', methods=["POST"])
+def login():
+    """
+    1. 获取参数， mobile， password
+    2. 校验参数
+    3. 判断用户名是否存在
+    4. 不存在，返回错误
+    5. 存在，从数据库中查询用户名密码
+    6. 与用户输入密码对比
+    7. 不一致，返回错误
+    8. 一致，保存用户登录状态
+    9. 返回响应
+    :return:
+    """
+    params_dict = request.json
+    mobile = params_dict.get("mobile")
+    password = params_dict.get("password")
+
+    if not all([mobile, password]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    if not re.match("1[3456789]\\d{9}", mobile):
+        return jsonify(errno=RET.PARAMERR, errmsg="手机号码格式不正确")
+    try:
+        user = User.query.filter(User.mobile == mobile).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.NODATA, errmsg="数据库查询错误")
+    if not user:
+        return jsonify(errno=RET.USERERR, errmsg="用户不存在")
+
+    if not user.check_password(password):
+        return jsonify(errno=RET.PWDERR, errmsg="密码输入错误")
+
+    session["user_id"] = user.id
+    session["mobile"] = user.mobile
+    session["nick_name"] = user.nick_name
+
+    return jsonify(errno=RET.OK, errmsg="登录成功")
+
+
 @passport_blu.route('/register', methods=["POST"])
 def regitster():
     """
@@ -50,10 +100,15 @@ def regitster():
         return jsonify(errno=RET.DATAERR, errmsg="短信验证码输入错误")
     user = User()
 
+    database_user = User.query.filter(User.mobile == mobile).first()
+    if database_user:
+        return jsonify(errno=RET.DATAEXIST, errmsg="手机号码已注册")
+
     user.mobile = mobile
     user.nick_name = mobile
     user.password = password
     user.last_login = datetime.now()
+
     try:
         db.session.add(user)
     except Exception as e:
@@ -65,7 +120,6 @@ def regitster():
     session["nick_name"] = user.nick_name
 
     return jsonify(errno=RET.OK, errmsg="注册成功")
-
 
 
 @passport_blu.route('/sms_code', methods=["POST"])

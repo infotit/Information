@@ -127,6 +127,9 @@ $(function(){
             url: "/passport/login",
             type: "post",
             contentType: "application/json",
+            headers:{
+            "X-CSRFToken": getCookie("csrf_token")
+        },
             data: JSON.stringify(params),
             success: function (resp) {
                 if(resp.errno == "0"){
@@ -134,6 +137,8 @@ $(function(){
                 }
                 else {
                     alert(resp.errmsg)
+                    $("#login-mobile-err").html(resp.errmsg).show();
+
                 }
             }
         })
@@ -182,6 +187,9 @@ $(function(){
             type: "post",
             contentType: "application/json",
             data: JSON.stringify(params),
+            headers:{
+            "X-CSRFToken": getCookie("csrf_token")
+        },
             success: function (resp) {
                 if (resp.errno == "0") {
                     location.reload()
@@ -228,13 +236,15 @@ function sendSMSCode() {
         "image_code":imageCode,
         "image_code_id": imageCodeId
     }
-
     // 发起注册请求
     $.ajax({
         url: "/passport/sms_code",
         type: "post",
         data: JSON.stringify(params),
         contentType: "application/json",
+        headers:{
+            "X-CSRFToken": getCookie("csrf_token")
+        },
         success: function (resp) {
             if (resp.errno == "0") {
                 alert(resp.errmsg)

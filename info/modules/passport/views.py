@@ -14,7 +14,7 @@ from info import constants
 
 
 @passport_blu.route('/logout')
-def log():
+def logout():
 
     session.pop("user_id", None)
     session.pop("nick_name", None)

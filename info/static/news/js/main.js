@@ -253,20 +253,18 @@ function sendSMSCode() {
 
                     if (num == 1) {
                         clearInterval(t)
-
                         $(".get_code").html("点击获取验证码")
                         $(".get_code").attr("onclick", "sendSMSCode();");
                     }else {
                         num -= 1
                         $(".get_code").html(num + "秒")
                     }
-                }, 1000)
+                }, 1000);
             }else {
                 alert(resp.errmsg)
                 $(".get_code").attr("onclick", "sendSMSCode();");
             }
         }
-
     })
 
 }

@@ -8,7 +8,6 @@ from flask_wtf.csrf import generate_csrf
 from redis import StrictRedis
 
 from config import config
-from info.utils.common import do_to_index
 
 redis_store = None  # type: StrictRedis
 
@@ -39,7 +38,7 @@ def create_app(config_name):
 
     CSRFProtect(app)
     Session(app)
-
+    from info.utils.common import do_to_index
     app.add_template_filter(do_to_index, 'index_class')
 
 

@@ -8,7 +8,7 @@ from . import index_blu
 
 @index_blu.route('/news_list')
 def news_list():
-    cid = request.args.get("category_id", "1")
+    cid = request.args.get("cid", "1")
     page = request.args.get("page", "1")
     per_page = request.args.get("per_page", "10")
 

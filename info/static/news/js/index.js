@@ -1,4 +1,4 @@
-var currentCid = 0; // 当前分类 id
+var currentCid = 1; // 当前分类 id
 var cur_page = 1; // 当前页
 var total_page = 1;  // 总页数
 var data_querying = true;   // 是否正在向后台获取数据

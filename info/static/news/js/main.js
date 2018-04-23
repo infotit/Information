@@ -119,6 +119,29 @@ $(function(){
         }
 
         // 发起登录请求
+        var params = {
+            "mobile":mobile,
+            "password":password
+        }
+        $.ajax({
+            url: "/passport/login",
+            type: "post",
+            contentType: "application/json",
+            headers:{
+            "X-CSRFToken": getCookie("csrf_token")
+        },
+            data: JSON.stringify(params),
+            success: function (resp) {
+                if(resp.errno == "0"){
+                    location.reload()
+                }
+                else {
+                    alert(resp.errmsg)
+                    $("#login-mobile-err").html(resp.errmsg).show();
+
+                }
+            }
+        })
     })
 
 
@@ -164,17 +187,18 @@ $(function(){
             type: "post",
             contentType: "application/json",
             data: JSON.stringify(params),
+            headers:{
+            "X-CSRFToken": getCookie("csrf_token")
+        },
             success: function (resp) {
                 if (resp.errno == "0") {
                     location.reload()
                 }else {
-
+                    alert(resp.errmsg)
                     $("#register-password-err").html(resp.errmsg).show()
                 }
             }
         })
-
-
     })
 })
 
@@ -182,11 +206,8 @@ var imageCodeId = ""
 
 // 生成一个图片验证码的编号，并设置页面中图片验证码img标签的src属性
 function generateImageCode() {
-    // 浏览器要发起图片验证码请求/image_code?imageCodeId=xxxxx
     imageCodeId = generateUUID()
-    // 生成 url
     var url = "/passport/image_code?imageCodeId=" + imageCodeId
-    // 给指定img标签设置src,设置了地址之后，img标签就会去向这个地址发起请求，请求图片
     $(".get_pic_code").attr("src", url)
 }
 
@@ -215,45 +236,35 @@ function sendSMSCode() {
         "image_code":imageCode,
         "image_code_id": imageCodeId
     }
-
     // 发起注册请求
     $.ajax({
-        // 请求地址
         url: "/passport/sms_code",
-        // 请求方式
         type: "post",
-        // 请求参数
         data: JSON.stringify(params),
-        // 请求参数的数据类型
         contentType: "application/json",
-        success: function (response) {
-            if (response.errno == "0") {
-                // 代表发送成功
+        headers:{
+            "X-CSRFToken": getCookie("csrf_token")
+        },
+        success: function (resp) {
+            if (resp.errno == "0") {
+                alert(resp.errmsg)
                 var num = 60
                 var t = setInterval(function () {
 
                     if (num == 1) {
-                        // 代表倒计时结束
-                        // 清除倒计时
                         clearInterval(t)
-
-                        // 设置显示内容
                         $(".get_code").html("点击获取验证码")
-                        // 添加点击事件
                         $(".get_code").attr("onclick", "sendSMSCode();");
                     }else {
                         num -= 1
-                        // 设置 a 标签显示的内容
                         $(".get_code").html(num + "秒")
                     }
-                }, 1000)
+                }, 1000);
             }else {
-                // 代表发送失败
-                alert(response.errmsg)
+                alert(resp.errmsg)
                 $(".get_code").attr("onclick", "sendSMSCode();");
             }
         }
-
     })
 
 }
@@ -292,3 +303,9 @@ function generateUUID() {
     });
     return uuid;
 }
+
+function logout() {
+    $.get("/passport/logout", function (resp) {
+        location.reload()
+    })
+    }

@@ -63,6 +63,9 @@ class User(BaseModel, db.Model):
     def password(self, value):
         self.password_hash = generate_password_hash(value)
 
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
     # 当前用户所发布的新闻
     news_list = db.relationship('News', backref='user', lazy='dynamic')
 

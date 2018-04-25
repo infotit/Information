@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05d70c7f-3614-47fb-8d7f-095a6b406efd" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/info/static/news/html/user.html" afterPath="$PROJECT_DIR$/info/templates/news/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/a704f602-4407-42cc-ac79-255adb50767b.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a704f602-4407-42cc-ac79-255adb50767b.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/__init__.py" afterPath="$PROJECT_DIR$/info/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/models.py" afterPath="$PROJECT_DIR$/info/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/js/detail.js" afterPath="$PROJECT_DIR$/info/static/news/js/detail.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/templates/news/base.html" afterPath="$PROJECT_DIR$/info/templates/news/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/templates/news/detail.html" afterPath="$PROJECT_DIR$/info/templates/news/detail.html" />
@@ -15,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Information$manage.coverage" NAME="manage Coverage Results" MODIFIED="1524581973410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Information$manage.coverage" NAME="manage Coverage Results" MODIFIED="1524635201099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Information$views.coverage" NAME="views Coverage Results" MODIFIED="1524412135758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/info/modules/index" />
   </component>
   <component name="DatabaseView">
@@ -41,82 +45,42 @@
         <item name="@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="information27" type="e3449647:DbNodeDescriptor" />
       </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="information27" type="e3449647:DbNodeDescriptor" />
+        <item name="info_comment_like" type="e3449647:DbNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="111" column="4" lean-forward="false" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="attributes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="langhelpers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="767" column="0" lean-forward="false" selection-start-line="767" selection-start-column="0" selection-end-line="767" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info/templates/news/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="33" />
-              <folding>
-                <element signature="e#685#767#0#HTML" expanded="true" />
-                <element signature="e#926#1008#0#HTML" expanded="true" />
-                <element signature="e#2643#2948#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info/modules/news/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info/static/news/js/detail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="134" column="24" lean-forward="true" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+            <state relative-caret-position="1248">
+              <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info/utils/common.py">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info/templates/news/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="832">
+              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/info/templates/news/user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -127,25 +91,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ajax</find>
-      <find>news_list</find>
-      <find>用户</find>
-      <find>collect_news</find>
-      <find>parent_id</find>
-      <find>user_info</find>
-      <find>用户登录后显示下面，隐藏上面111</find>
-      <find>avatar_url</find>
-      <find>+= 1</find>
-      <find>收藏</find>
-      <find>cancel</find>
-      <find>dsaffaf</find>
       <find>&lt;int:</find>
       <find>collection_news</find>
       <find>取消收藏</find>
@@ -153,17 +105,29 @@
       <find>comment_co</find>
       <find>comment_cou</find>
       <find>data-newsid</find>
-      <find>reply_sub</find>
       <find>data</find>
       <find>news_id</find>
       <find>comment_list</find>
       <find>collection</find>
       <find>comment_form</find>
       <find>news_id = request.json.get(&quot;news_id&quot;)</find>
-      <find>comment</find>
       <find>collect</find>
-      <find>&lt;int</find>
       <find>comment_count</find>
+      <find>&lt;int</find>
+      <find>make_response</find>
+      <find>comment_id</find>
+      <find>news_detail</find>
+      <find>条</find>
+      <find>comment_news</find>
+      <find>comment</find>
+      <find>comment_up</find>
+      <find>OK</find>
+      <find>var comment</find>
+      <find>reply_sub</find>
+      <find>has_comment_up</find>
+      <find>javascript</find>
+      <find>data-likecount</find>
+      <find>unique</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,7 +156,6 @@
         <option value="$PROJECT_DIR$/info/static/news/js/1.js" />
         <option value="$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/werkzeug/security.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a704f602-4407-42cc-ac79-255adb50767b/console.sql" />
-        <option value="$PROJECT_DIR$/info/models.py" />
         <option value="$PROJECT_DIR$/info/static/news/js/main.js" />
         <option value="$PROJECT_DIR$/info/modules/passport/views.py" />
         <option value="$PROJECT_DIR$/info/constants.py" />
@@ -202,13 +165,17 @@
         <option value="$PROJECT_DIR$/info/static/detail.html" />
         <option value="$PROJECT_DIR$/info/static/news/html/detail.html" />
         <option value="$PROJECT_DIR$/info/templates/news/index.html" />
-        <option value="$PROJECT_DIR$/info/__init__.py" />
         <option value="$PROJECT_DIR$/info/static/news/css/main.css" />
-        <option value="$PROJECT_DIR$/info/templates/news/base.html" />
+        <option value="$PROJECT_DIR$/info/models.py" />
         <option value="$PROJECT_DIR$/info/utils/common.py" />
-        <option value="$PROJECT_DIR$/info/modules/news/views.py" />
         <option value="$PROJECT_DIR$/info/templates/news/detail.html" />
+        <option value="$PROJECT_DIR$/info/modules/news/views.py" />
         <option value="$PROJECT_DIR$/info/static/news/js/detail.js" />
+        <option value="$PROJECT_DIR$/info/templates/news/base.html" />
+        <option value="$PROJECT_DIR$/info/modules/profile/__init__.py" />
+        <option value="$PROJECT_DIR$/info/__init__.py" />
+        <option value="$PROJECT_DIR$/info/templates/news/user.html" />
+        <option value="$PROJECT_DIR$/info/modules/profile/views.py" />
       </list>
     </option>
   </component>
@@ -220,8 +187,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="402" />
+    <option name="width" value="720" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -276,6 +243,13 @@
               <item name="Information" type="b2602c69:ProjectViewProjectNode" />
               <item name="Information" type="462c0819:PsiDirectoryNode" />
               <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="passport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Information" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -316,22 +290,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="SearchEverywhereHistoryKey" value="response&#9;null&#9;null&#10;detail.js&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/detail.js&#10;detailjs&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/detail.html&#10;index.j&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/index.js&#10;index&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;index.js&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/index.js&#10;constants&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/constants.py&#10;index.h&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;main.js&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/main.js&#10;views&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/modules/index/views.py&#10;index.&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;index.htm&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;mainjs&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/main.js&#10;index.html&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;main.css&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/admin/css/main.css&#10;reset.css&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/admin/css/reset.css&#10;main&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/main.js" />
+    <property name="SearchEverywhereHistoryKey" value="detail.htm&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/detail.html&#10;detail.js&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/detail.js&#10;detailhtml&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/detail.html&#10;response&#9;null&#9;null&#10;detailjs&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/detail.html&#10;index.j&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/index.js&#10;index&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;index.js&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/index.js&#10;constants&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/constants.py&#10;index.h&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;main.js&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/main.js&#10;views&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/modules/index/views.py&#10;index.&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;index.htm&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;mainjs&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/main.js&#10;index.html&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/templates/news/index.html&#10;main.css&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/admin/css/main.css&#10;reset.css&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/admin/css/reset.css&#10;main&#9;FILE&#9;file:///Users/stephenwang/Desktop/flask_dir/Information/info/static/news/js/main.js" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/info/templates/news" />
+      <recent name="$PROJECT_DIR$/info/static/news/html" />
+      <recent name="$PROJECT_DIR$/info/static" />
+      <recent name="$PROJECT_DIR$/info/utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/info/static/news/html" />
       <recent name="$PROJECT_DIR$/info/static/news/js" />
       <recent name="$PROJECT_DIR$/info/libs" />
       <recent name="$PROJECT_DIR$/info/utils" />
       <recent name="$PROJECT_DIR$/info" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/info/templates/news" />
-      <recent name="$PROJECT_DIR$/info/static/news/html" />
-      <recent name="$PROJECT_DIR$/info/static" />
-      <recent name="$PROJECT_DIR$/info/utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -499,25 +473,31 @@
       <option name="project" value="LOCAL" />
       <updated>1524502922201</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="评论和自评论功能添加">
+      <created>1524582925968</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1524582925968</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="805" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Redis Servers" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28152493" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32697946" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928675" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15395895" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49706745" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4599709" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4516129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -584,7 +564,8 @@
     <MESSAGE value="新闻详情页展示" />
     <MESSAGE value="收藏按钮展示逻辑" />
     <MESSAGE value="收藏功能添加完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="收藏功能添加完成" />
+    <MESSAGE value="评论和自评论功能添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="评论和自评论功能添加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -594,31 +575,6 @@
           <line>118</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/info/modules/news/views.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/info/modules/news/views.py</url>
-          <line>106</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/info/modules/news/views.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/info/modules/news/views.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/info/modules/news/views.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -627,75 +583,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="63" />
+      <option name="time" value="74" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="915" column="0" lean-forward="false" selection-start-line="915" selection-start-column="0" selection-end-line="915" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socketserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="redis://IedisURI?type=Explorer&amp;label=127.0.0.1&amp;host=127.0.0.1&amp;port=6379&amp;password=&amp;timestamp=1524049808872&amp;nodeHost=127.0.0.1&amp;nodePort=6379">
-      <provider selected="true" editor-type-id="x">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/modules/passport/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/werkzeug/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/werkzeug/wrappers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="452" column="8" lean-forward="false" selection-start-line="452" selection-start-column="8" selection-end-line="452" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3b9fd16e/a704f602-4407-42cc-ac79-255adb50767b/information27.info_news">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3b9fd16e/a704f602-4407-42cc-ac79-255adb50767b/information27.info_category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/werkzeug/serving.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -707,11 +599,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding>
-            <element signature="e#685#767#0#HTML" expanded="true" />
-            <element signature="e#926#1008#0#HTML" expanded="true" />
-            <element signature="e#2643#2948#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -734,24 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="70" column="39" lean-forward="true" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/modules/index/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1820">
-          <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#73#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/static/news/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17056">
-          <caret line="656" column="1" lean-forward="false" selection-start-line="656" selection-start-column="1" selection-end-line="656" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,34 +653,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info/templates/news/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/loading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/flask/json.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="248" column="0" lean-forward="false" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="510" column="0" lean-forward="false" selection-start-line="510" selection-start-column="0" selection-end-line="510" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -887,34 +733,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/dynamic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="1859" column="0" lean-forward="true" selection-start-line="1859" selection-start-column="0" selection-end-line="1859" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -934,22 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info/utils/response_code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/utils/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/3b9fd16e/a704f602-4407-42cc-ac79-255adb50767b/information27.info_comment">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -965,34 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="111" column="4" lean-forward="false" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/flask/globals.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/werkzeug/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1005,33 +787,206 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info/modules/news/views.py">
+    <entry file="file://$PROJECT_DIR$/info/static/news/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="159">
+          <caret line="846" column="1" lean-forward="false" selection-start-line="846" selection-start-column="1" selection-end-line="846" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/3b9fd16e/a704f602-4407-42cc-ac79-255adb50767b/information27.info_comment_like">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/utils/response_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="510" column="0" lean-forward="false" selection-start-line="510" selection-start-column="0" selection-end-line="510" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/event/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/event/attr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="254" column="0" lean-forward="false" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/identity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="699" column="0" lean-forward="false" selection-start-line="699" selection-start-column="0" selection-end-line="699" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="228" column="0" lean-forward="false" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="1855" column="0" lean-forward="false" selection-start-line="1855" selection-start-column="0" selection-end-line="1855" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/werkzeug/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/flask/json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/info/static/news/js/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="134" column="24" lean-forward="true" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+        <state relative-caret-position="146">
+          <caret line="181" column="67" lean-forward="false" selection-start-line="181" selection-start-column="53" selection-end-line="181" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/utils/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/templates/news/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/info/templates/news/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="33" />
+        <state relative-caret-position="1248">
+          <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/modules/news/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
           <folding>
-            <element signature="e#685#767#0#HTML" expanded="true" />
-            <element signature="e#926#1008#0#HTML" expanded="true" />
-            <element signature="e#2643#2948#0#HTML" expanded="false" />
+            <element signature="e#0#83#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/modules/profile/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="57" column="38" lean-forward="false" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/modules/passport/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2237">
+          <caret line="203" column="19" lean-forward="true" selection-start-line="203" selection-start-column="19" selection-end-line="203" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/modules/index/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/templates/news/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/modules/profile/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -8,6 +8,45 @@ from info.utils.response_code import RET
 from . import profile_blu
 
 
+@profile_blu.route('/collection')
+@user_login_data
+def user_collection():
+    page = request.args.get("page", 1)
+
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+        page = 1
+
+    user = g.user
+    collections_list = []
+    total_page = 1
+    current_page = 1
+    try:
+        paginate = user.collection_news.paginate(page, constants.USER_COLLECTION_MAX_NEWS, False)
+        current_page = paginate.page
+        total_page = paginate.pages
+        collections_list = paginate.items
+    except Exception as e:
+        current_app.logger.error(e)
+
+    news_collection_dict_list = []
+
+    for news_collection in collections_list:
+        news_collection_dict_list.append(news_collection.to_basic_dict())
+
+    data = {
+        "current_page": current_page,
+        "total_page": total_page,
+        "collections": news_collection_dict_list
+    }
+
+    return render_template('news/user_collection.html', data=data)
+
+
+
+
 @profile_blu.route('/pass_info', methods=["POST", "GET"])
 @user_login_data
 def pass_info():

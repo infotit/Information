@@ -1,11 +1,105 @@
 from flask import render_template, g, redirect, url_for, jsonify, request, current_app
 
 from info import db, constants
-from info.models import News
+from info.models import News, User, Category
 from info.utils.common import user_login_data
 from info.utils.image_storage import image_storage
 from info.utils.response_code import RET
 from . import profile_blu
+
+
+@profile_blu.route('/news_list')
+@user_login_data
+def news_list():
+    user = g.user
+    page = request.args.get("page", 1)
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+    user_news_list = []
+    current_page = 1
+    total_page = 1
+    try:
+        paginate = News.query.filter(News.user_id == user.id).paginate(page, constants.USER_COLLECTION_MAX_NEWS, False)
+        current_page = paginate.page
+        total_page = paginate.pages
+        user_news_list = paginate.items
+    except Exception as e:
+        current_app.logger.error(e)
+
+    user_news_dict_list = []
+    for news in user_news_list:
+        user_news_dict_list.append(news.to_review_dict())
+
+    data = {
+        "current_page":current_page,
+        "total_page": total_page,
+        "news_list": user_news_dict_list
+    }
+
+    return render_template('news/user_news_list.html', data=data)
+
+
+@profile_blu.route('/news_release', methods=["POST", "GET"])
+@user_login_data
+def news_release():
+    if request.method == "GET":
+        categories = []
+        try:
+            categories = Category.query.all()
+        except Exception as e:
+            current_app.logger.error(e)
+        category_dict_list = []
+        for category in categories:
+            category_dict_list.append(category.to_dict())  # id, name
+
+        category_dict_list.pop(0)
+
+        return render_template('news/user_news_release.html', data={"categories": category_dict_list})
+
+    title = request.form.get("title")
+    source = "个人发布"
+    digest = request.form.get("digest")
+    content = request.form.get("content")
+    index_image = request.files.get("index_image")
+    category_id = request.form.get("category_id")
+
+    if not all([title, category_id, digest, index_image, content]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    try:
+        category_id = int(category_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+    try:
+        index_image_data = index_image.read()
+        if index_image_data:
+            key = image_storage(index_image)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.THIRDERR, errmsg="图片上传错误")
+
+    news = News()
+    news.title = title
+    news.category_id = category_id
+    news.digest = digest
+    news.content = content
+    # 1：待审核， 0：审核通过，其他：审核中
+    news.status = 1
+    news.index_image_url = constants.QINIU_DOMIN_PREFIX + key
+    news.source = source
+    news.user_id = g.user.id
+
+    try:
+        db.session.add(news)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据库保存错误")
+
+    return jsonify(errno=RET.OK, errmsg="OK")
 
 
 @profile_blu.route('/collection')
@@ -43,8 +137,6 @@ def user_collection():
     }
 
     return render_template('news/user_collection.html', data=data)
-
-
 
 
 @profile_blu.route('/pass_info', methods=["POST", "GET"])

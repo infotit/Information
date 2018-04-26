@@ -16,7 +16,6 @@ def news_detail(news_id):
         news_list = News.query.order_by(News.clicks.desc()).limit(constants.CLICK_RANK_MAX_NEWS)
     except Exception as e:
         current_app.logger.error(e)
-
     news_dict_list = []
     for news in news_list:
         news_dict_list.append(news.to_basic_dict())

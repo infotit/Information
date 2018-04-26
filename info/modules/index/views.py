@@ -19,7 +19,8 @@ def news_list():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
-    filters = []
+    # 3. 查询数据并分页
+    filters = [News.status == 0]
     if cid != 1:
         filters.append(News.category_id == cid)
     try:

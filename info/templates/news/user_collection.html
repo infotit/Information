@@ -35,6 +35,8 @@
                     totalPage: {{ data.total_page }},
                     callback: function(current) {
                         location.href = '/user/collection?page=' + current
+                        window.parent.scrollTo(0, 0)
+
                     }
                 });
             });

@@ -1,13 +1,54 @@
-from flask import render_template, request, jsonify, current_app, session, redirect, url_for
+import time
+from datetime import datetime
+
+from flask import render_template, request, jsonify, current_app, session, redirect, url_for, g
 
 from info.models import User
+from info.utils.common import user_login_data
 from info.utils.response_code import RET
 from . import admin_blu
 
 
+@admin_blu.route('/user_count')
+def user_count():
+    total_count = 0
+    mon_count = 0
+    day_count = 0
+    try:
+        total_count = User.query.filter(User.is_admin == False).count()
+    except Exception as e:
+        current_app.logger.error(e)
+
+    t = time.localtime()
+    begin_mon = datetime.strptime(("%d-%02d-01" % (t.tm_year, t.tm_mon)), "%Y-%m-%d")
+    try:
+        mon_count = User.query.filter(User.is_admin == False, User.create_time > begin_mon).count()
+    except Exception as e:
+        current_app.logger.error(e)
+
+    begin_day = datetime.strptime(("%d-%02d-%02d" % (t.tm_year, t.tm_mon, t.tm_mday)), "%Y-%m-%d")
+    try:
+        day_count = User.query.filter(User.is_admin == False, User.create_time > begin_day).count()
+    except Exception as e:
+        current_app.logger.error(e)
+
+    data = {
+        "total_count": total_count,
+        "mon_count": mon_count,
+        "day_count": day_count,
+    }
+
+    return render_template('admin/user_count.html', data=data)
+
+
+
+
 @admin_blu.route('/')
+@user_login_data
 def index():
-    return render_template('admin/index.html')
+    user = g.user
+    data = {"user": user.to_dict() if user else None}
+    return render_template('admin/index.html', data=data)
 
 
 @admin_blu.route('/login', methods=["POST", "GET"])
@@ -16,7 +57,7 @@ def admin_login():
         user_id = session.get('user_id', None)
         is_admin = session.get('is_admin', False)
         if user_id and is_admin:
-            return render_template('admin/index.html')
+            return redirect(url_for('admin.index'))
         return render_template('admin/login.html')
 
     username = request.form.get("username")

@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="05d70c7f-3614-47fb-8d7f-095a6b406efd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/modules/admin/views.py" afterPath="$PROJECT_DIR$/info/modules/admin/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/js/index.js" afterPath="$PROJECT_DIR$/info/static/news/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/templates/news/base.html" afterPath="$PROJECT_DIR$/info/templates/news/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/modules/admin/__init__.py" afterPath="$PROJECT_DIR$/info/modules/admin/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/modules/passport/views.py" afterPath="$PROJECT_DIR$/info/modules/passport/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,12 +45,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info/modules/admin/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="130">
+              <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info/modules/admin/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/info/modules/passport/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,7 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>make_response</find>
       <find>comment_id</find>
       <find>news_detail</find>
       <find>条</find>
@@ -98,6 +118,7 @@
       <find>detail</find>
       <find>index</find>
       <find>category_li</find>
+      <find>pop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,7 +148,6 @@
         <option value="$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/werkzeug/security.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a704f602-4407-42cc-ac79-255adb50767b/console.sql" />
         <option value="$PROJECT_DIR$/info/static/news/js/main.js" />
-        <option value="$PROJECT_DIR$/info/modules/passport/views.py" />
         <option value="$PROJECT_DIR$/info/constants.py" />
         <option value="$PROJECT_DIR$/info/modules/news/__init__.py" />
         <option value="$PROJECT_DIR$/info/static/detail.html" />
@@ -138,6 +158,8 @@
         <option value="$PROJECT_DIR$/info/templates/news/base.html" />
         <option value="$PROJECT_DIR$/info/static/news/js/index.js" />
         <option value="$PROJECT_DIR$/info/modules/admin/views.py" />
+        <option value="$PROJECT_DIR$/info/modules/admin/__init__.py" />
+        <option value="$PROJECT_DIR$/info/modules/passport/views.py" />
       </list>
     </option>
   </component>
@@ -491,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524812187857</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="管理员登录后，若访问登录页面，则直接跳转到管理后台首页">
+      <created>1524823031066</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1524823031066</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -582,7 +611,8 @@
     <MESSAGE value="添加修改密码功能" />
     <MESSAGE value="添加展示用户收藏的逻辑" />
     <MESSAGE value="添加首页分类信息展示逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加首页分类信息展示逻辑" />
+    <MESSAGE value="管理员登录后，若访问登录页面，则直接跳转到管理后台首页" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员登录后，若访问登录页面，则直接跳转到管理后台首页" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -590,7 +620,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/info/modules/passport/views.py</url>
-          <line>118</line>
+          <line>119</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -611,13 +641,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/sql/visitors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="292" column="0" lean-forward="false" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/py3_flask/lib/python3.6/site-packages/sqlalchemy/orm/dynamic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -746,16 +769,6 @@
         <state relative-caret-position="130">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/modules/passport/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,9 +1003,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/info/modules/admin/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="130">
+          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/modules/admin/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/modules/passport/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

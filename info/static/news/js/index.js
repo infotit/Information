@@ -42,7 +42,7 @@ $(function () {
         // 页面滚动了多少,这个是随着页面滚动实时变化的
         var nowScroll = $(document).scrollTop();
 
-        if ((canScrollHeight - nowScroll) < 100) {
+        if ((canScrollHeight - nowScroll) < 1) {
             // TODO 判断页数，去更新新闻数据
             if (!data_querying) {
                 data_querying = true

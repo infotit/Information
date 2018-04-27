@@ -4,6 +4,7 @@ from info.models import User
 from info.utils.response_code import RET
 from . import admin_blu
 
+
 @admin_blu.route('/')
 def index():
     return render_template('admin/index.html')
@@ -11,7 +12,6 @@ def index():
 
 @admin_blu.route('/login', methods=["POST", "GET"])
 def admin_login():
-
     if request.method == "GET":
         return render_template('admin/login.html')
 
@@ -39,4 +39,3 @@ def admin_login():
     session['is_admin'] = user.is_admin
 
     return redirect(url_for('admin.index'))
-

@@ -1,7 +1,7 @@
 from flask import current_app, render_template, session, request, jsonify
 
 from info import constants
-from info.models import User, News
+from info.models import User, News, Category
 from info.utils.response_code import RET
 from . import index_blu
 
@@ -73,9 +73,20 @@ def index():
     for news in news_list:
         news_dict_list.append(news.to_basic_dict())
 
+    try:
+        categories = Category.query.all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
+    category_dict_list = []
+    for category in categories:
+        category_dict_list.append(category.to_dict())
+
     data = {
         "user": user.to_dict() if user else None,
-        "news_dict_list": news_dict_list
+        "news_dict_list": news_dict_list,
+        "categories": category_dict_list
     }
 
     return render_template('news/index.html', data=data)

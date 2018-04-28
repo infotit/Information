@@ -1,5 +1,5 @@
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from flask import render_template, request, jsonify, current_app, session, redirect, url_for, g
 
@@ -32,10 +32,29 @@ def user_count():
     except Exception as e:
         current_app.logger.error(e)
 
+    active_time = []
+    active_count = []
+
+    # 今天0点0分0秒
+    # 今天24点
+    # 查询 今天0点0分0秒 <= User.last_login < 今天24点
+    today = datetime.strptime(("%d-%02d-%02d" % (t.tm_year, t.tm_mon, t.tm_mday)), "%Y-%m-%d")
+    for i in range(0, 31):
+        today_begin = today - timedelta(days=i)
+        today_end = today - timedelta(days=(i - 1))
+        today_count = User.query.filter(User.is_admin == False, User.last_login >= today_begin,
+                                        User.last_login < today_end).count()
+        active_time.append(today_begin.strftime("%Y-%m-%d"))
+        active_count.append(today_count)
+
+    active_time.reverse()
+    active_count.reverse()
     data = {
         "total_count": total_count,
         "mon_count": mon_count,
         "day_count": day_count,
+        "active_time": active_time,
+        "active_count": active_count
     }
 
     return render_template('admin/user_count.html', data=data)

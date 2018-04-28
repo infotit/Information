@@ -216,7 +216,8 @@ $(function () {
                     alert('请输入评论内容')
                     return
                 }
-                var params = {
+
+            var params = {
                     "news_id": news_id,
                     "comment": comment,
                     "parent_id": parent_id

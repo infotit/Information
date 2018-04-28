@@ -3,10 +3,41 @@ from datetime import datetime, timedelta
 
 from flask import render_template, request, jsonify, current_app, session, redirect, url_for, g
 
+from info import constants
 from info.models import User
 from info.utils.common import user_login_data
 from info.utils.response_code import RET
 from . import admin_blu
+
+
+@admin_blu.route('/user_list')
+def user_list():
+    page = request.args.get("page", 1)
+    try:
+        page = int(page)
+    except Exception as e:
+        page = 1
+    current_page = 1
+    total_page = 1
+    users = []
+    try:
+        paginate = User.query.filter(User.is_admin == False).paginate(page, constants.USER_COLLECTION_MAX_NEWS, False)
+        current_page = paginate.page
+        total_page = paginate.pages
+        users = paginate.items
+    except Exception as e:
+        current_app.logger.error(e)
+
+    user_dict_list = []
+    for user in users:
+        user_dict_list.append(user.to_admin_dict())
+
+    data = {
+        "current_page": current_page,
+        "total_page": total_page,
+        "users": user_dict_list
+    }
+    return render_template('admin/user_list.html', data=data)
 
 
 @admin_blu.route('/user_count')

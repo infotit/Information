@@ -13,7 +13,7 @@
 	<div class="breadcrub">
 			当前位置：新闻管理>新闻审核
 			<form class="news_filter_form">
-				<input type="text" placeholder="请输入关键字" class="input_txt">
+                <input type="text" name="keywords" placeholder="请输入关键字" class="input_txt">
 				<input type="submit" value="搜 索" class="input_sub">
 			</form>
 		</div>
@@ -26,96 +26,23 @@
 					<th width="5%">状态</th>
 					<th width="8%">管理操作</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>已通过</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>未通过</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>未审核</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>已通过</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>未通过</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>未审核</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>已通过</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>未通过</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>未审核</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>
-				<tr>
-					<td>10</td>
-					<td class="tleft">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</td>
-					<td>2018-3-5 21:39:05</td>
-					<td>未审核</td>
-					<td>
-						<a href="news_review_detail.html" class="review">审核</a>
-					</td>
-				</tr>			
+                {% for news in data.news_list %}
+                    <tr>
+                        <td>{{ news.id }}</td>
+                        <td class="tleft">{{ news.title }}</td>
+                        <td>{{ news.create_time }}</td>
+                        <td>{% if news.status == 0 %}
+                            已通过
+                        {% elif news.status == -1 %}
+                            未通过
+                        {% else %}
+                            未审核
+                        {% endif %}</td>
+                        <td>
+                            <a href="{{ url_for("admin.news_review_detail", news_id=news.id) }}" class="review">审核</a>
+                        </td>
+                    </tr>
+                {% endfor %}
 			</table>
 		</div>
 
@@ -126,15 +53,13 @@
         <script>
 			$(function() {
 				$("#pagination").pagination({
-					currentPage: 2,
-					totalPage: 3,
+                    currentPage: {{ data.current_page }},
+                    totalPage: {{ data.total_page }},
 					callback: function(current) {
-					    alert('ok!');
+                        window.location = '/admin/news_review?p=' + current
 					}
 				});
 			});
 		</script>
-
-	
 </body>
 </html>

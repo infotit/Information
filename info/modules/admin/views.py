@@ -1,13 +1,233 @@
 import time
 from datetime import datetime, timedelta
 
-from flask import render_template, request, jsonify, current_app, session, redirect, url_for, g
+from flask import render_template, request, jsonify, current_app, session, redirect, url_for, g, abort
 
-from info import constants
-from info.models import User
+from info import constants, db
+from info.models import User, News, Category
 from info.utils.common import user_login_data
+from info.utils.image_storage import image_storage
 from info.utils.response_code import RET
 from . import admin_blu
+
+
+@admin_blu.route('/news_edit_detail', methods=["POST", "GET"])
+def news_edit_detail():
+    if request.method == "GET":
+        news_id = request.args.get("news_id")
+        if not news_id:
+            abort(404)
+
+        try:
+            news_id = int(news_id)
+        except Exception as e:
+            return render_template('admin/news_edit_detail.html', errmsg='参数错误')
+        try:
+            news = News.query.get(news_id)
+        except Exception as e:
+            return render_template('admin/news_edit_detail.html', errmsg='查询错误')
+
+        if not news:
+            return render_template('admin/news_edit_detail.html', errmsg='新闻未找到')
+
+        try:
+            categories = Category.query.all()
+        except Exception as e:
+            return jsonify(errno=RET.DBERR, errmsg="查询错误")
+
+        category_dict_list = []
+        for category in categories:
+            cate_dict = category.to_dict()
+            if category.id == news.category_id:
+                cate_dict["is_selected"] = True
+            category_dict_list.append(cate_dict)
+
+        category_dict_list.pop(0)
+
+        data = {"news": news.to_dict(),
+                "categories": category_dict_list
+                }
+        return render_template('admin/news_edit_detail.html', data=data)
+
+    news_id = request.form.get("news_id")
+    title = request.form.get("title")
+    digest = request.form.get("digest")
+    content = request.form.get("content")
+    index_image = request.files.get("index_image")
+    category_id = request.form.get("category_id")
+    # 1.1 判断数据是否有值
+    if not all([title, digest, content, category_id]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数有误")
+
+    news = None
+    try:
+        news = News.query.get(news_id)
+    except Exception as e:
+        current_app.logger.error(e)
+    if not news:
+        return jsonify(errno=RET.NODATA, errmsg="未查询到新闻数据")
+
+    # 1.2 尝试读取图片
+    if index_image:
+        try:
+            index_image = index_image.read()
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.PARAMERR, errmsg="参数有误")
+
+        # 2. 将标题图片上传到七牛
+        try:
+            key = image_storage(index_image)
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.THIRDERR, errmsg="上传图片错误")
+        news.index_image_url = constants.QINIU_DOMIN_PREFIX + key
+        print("图片上传成功")
+    # 3. 设置相关数据
+    news.title = title
+    news.digest = digest
+    news.content = content
+    news.category_id = category_id
+
+    # 4. 保存到数据库
+    try:
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg="保存数据失败")
+    # 5. 返回结果
+    return jsonify(errno=RET.OK, errmsg="编辑成功")
+
+
+@admin_blu.route('/news_edit')
+def news_edit():
+    page = request.args.get("p", 1)
+    keywords = request.args.get("keywords", None)
+
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+        page = 1
+
+    news_list = []
+    current_page = 1
+    total_page = 1
+
+    filters = [News.status == 0]
+    if keywords:
+        filters.append(News.title.contains(keywords))
+
+    try:
+        paginate = News.query.filter(*filters) \
+            .order_by(News.create_time.desc()) \
+            .paginate(page, constants.ADMIN_NEWS_PAGE_MAX_COUNT, False)
+
+        news_list = paginate.items
+        current_page = paginate.page
+        total_page = paginate.pages
+    except Exception as e:
+        current_app.logger.error(e)
+
+    news_dict_list = []
+    for news in news_list:
+        news_dict_list.append(news.to_basic_dict())
+
+    context = {"total_page": total_page,
+               "current_page": current_page,
+               "news_list": news_dict_list}
+
+    return render_template('admin/news_edit.html', data=context)
+
+
+@admin_blu.route('/news_review_action', methods=["POST"])
+def news_review_action():
+    news_id = request.json.get("news_id")
+    action = request.json.get("action")
+
+    if not all([news_id, action]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    try:
+        news = News.query.get(news_id)
+    except Exception as e:
+        return jsonify(errno=RET.DBERR, errmsg="数据查询失败")
+
+    if action not in ("accept", "reject"):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    if not news:
+        return jsonify(errno=RET.NODATA, errmsg="未查询到数据")
+    if action == "accept":
+        news.status = 0
+    else:
+        reason = request.json.get("reason")
+        if not reason:
+            return jsonify(errno=RET.PARAMERR, errmsg="请输入拒绝原因")
+        news.status = -1
+        news.reason = reason
+
+    return jsonify(errno=RET.OK, errmsg="OK")
+
+
+@admin_blu.route('/news_review_detail/<int:news_id>', methods=["GET", "POST"])
+def news_review_detail(news_id):
+    news = None
+    try:
+        news = News.query.get(news_id)
+    except Exception as e:
+        current_app.logger.error(e)
+
+    if not news:
+        return render_template('admin/news_review_detail.html', data={"errmsg": "未查询到此新闻"})
+
+    data = {"news": news.to_dict()}
+    return render_template('admin/news_review_detail.html', data=data)
+
+
+@admin_blu.route('/news_review')
+def news_review():
+    page = request.args.get("p", 1)
+    keywords = request.args.get("keywords", None)
+
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+        page = 1
+
+    news_list = []
+    current_page = 1
+    total_page = 1
+
+    filters = [News.status != 0]
+    if keywords:
+        filters.append(News.title.contains(keywords))
+
+    try:
+        paginate = News.query.filter(*filters) \
+            .order_by(News.create_time.desc()) \
+            .paginate(page, constants.ADMIN_NEWS_PAGE_MAX_COUNT, False)
+
+        news_list = paginate.items
+        current_page = paginate.page
+        total_page = paginate.pages
+    except Exception as e:
+        current_app.logger.error(e)
+
+    news_dict_list = []
+    for news in news_list:
+        news_dict_list.append(news.to_review_dict())
+
+    context = {"total_page": total_page,
+               "current_page": current_page,
+               "news_list": news_dict_list}
+
+    return render_template('admin/news_review.html', data=context)
+
+
+
 
 
 @admin_blu.route('/user_list')
@@ -89,8 +309,6 @@ def user_count():
     }
 
     return render_template('admin/user_count.html', data=data)
-
-
 
 
 @admin_blu.route('/')

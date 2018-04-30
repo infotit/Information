@@ -76,10 +76,12 @@ def news_release():
     try:
         index_image_data = index_image.read()
         if index_image_data:
-            key = image_storage(index_image)
+            key = image_storage(index_image_data)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.THIRDERR, errmsg="图片上传错误")
+    else:
+        print("上传成功！！！！！")
 
     news = News()
     news.title = title

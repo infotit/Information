@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05d70c7f-3614-47fb-8d7f-095a6b406efd" name="Default" comment="增加用户关注列表显示&#10;TODO：用户关注与取消关注的逻辑还没有做，现在直接返回undefined，需要捋一下。。">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/info/static/news/html/other.html" afterPath="$PROJECT_DIR$/info/templates/news/other.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/info/static/news/html/user_follow.html" afterPath="$PROJECT_DIR$/info/templates/news/user_follow.html" />
+    <list default="true" id="05d70c7f-3614-47fb-8d7f-095a6b406efd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/modules/news/views.py" afterPath="$PROJECT_DIR$/info/modules/news/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/modules/profile/views.py" afterPath="$PROJECT_DIR$/info/modules/profile/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/css/main.css" afterPath="$PROJECT_DIR$/info/static/news/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/js/detail.js" afterPath="$PROJECT_DIR$/info/static/news/js/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/js/other.js" afterPath="$PROJECT_DIR$/info/static/news/js/other.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/js/user_follow.js" afterPath="$PROJECT_DIR$/info/static/news/js/user_follow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/templates/news/base.html" afterPath="$PROJECT_DIR$/info/templates/news/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/templates/news/detail.html" afterPath="$PROJECT_DIR$/info/templates/news/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/templates/news/user.html" afterPath="$PROJECT_DIR$/info/templates/news/user.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,11 +48,11 @@
         <entry file="file://$PROJECT_DIR$/info/templates/news/other.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="265">
-              <caret line="60" column="42" lean-forward="false" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+              <caret line="62" column="42" lean-forward="false" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
               <folding>
-                <element signature="e#1293#1383#0#HTML" expanded="true" />
-                <element signature="e#1494#1584#0#HTML" expanded="true" />
-                <marker date="1525104181096" expanded="false" signature="3854:3869" ph="..." />
+                <element signature="e#1392#1496#0#HTML" expanded="true" />
+                <element signature="e#1626#1730#0#HTML" expanded="true" />
+                <marker date="1525105549812" expanded="false" signature="4000:4015" ph="..." />
               </folding>
             </state>
           </provider>
@@ -105,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/info/templates/news/user_follow.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="235">
-              <caret line="22" column="87" lean-forward="false" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
+              <caret line="23" column="86" lean-forward="false" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -215,8 +204,8 @@
         <option value="$PROJECT_DIR$/info/templates/news/user_follow.html" />
         <option value="$PROJECT_DIR$/info/templates/news/base.html" />
         <option value="$PROJECT_DIR$/info/modules/profile/views.py" />
-        <option value="$PROJECT_DIR$/info/static/news/js/other.js" />
         <option value="$PROJECT_DIR$/info/templates/news/other.html" />
+        <option value="$PROJECT_DIR$/info/static/news/js/other.js" />
       </list>
     </option>
   </component>
@@ -661,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525085293176</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="增加用户关注列表显示, 其他用户的界面展示，其他用户的数据和发布新闻的展示">
+      <created>1525105553280</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1525105553280</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -758,7 +754,8 @@
     <MESSAGE value="添加管理后台用户信息统计模块" />
     <MESSAGE value="添加新闻审核列表、新闻审核实现、新闻版式编辑&#10;修改用户发布新闻时候，提取不到用户输入内容的bug。。" />
     <MESSAGE value="增加新闻分类的修改和添加功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加新闻分类的修改和添加功能" />
+    <MESSAGE value="增加用户关注列表显示, 其他用户的界面展示，其他用户的数据和发布新闻的展示" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加用户关注列表显示, 其他用户的界面展示，其他用户的数据和发布新闻的展示" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1139,7 +1136,7 @@
     <entry file="file://$PROJECT_DIR$/info/templates/news/user_follow.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
-          <caret line="22" column="87" lean-forward="false" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
+          <caret line="23" column="86" lean-forward="false" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
           <folding />
         </state>
       </provider>
@@ -1165,11 +1162,11 @@
     <entry file="file://$PROJECT_DIR$/info/templates/news/other.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
-          <caret line="60" column="42" lean-forward="false" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+          <caret line="62" column="42" lean-forward="false" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
           <folding>
-            <element signature="e#1293#1383#0#HTML" expanded="true" />
-            <element signature="e#1494#1584#0#HTML" expanded="true" />
-            <marker date="1525104181096" expanded="false" signature="3854:3869" ph="..." />
+            <element signature="e#1392#1496#0#HTML" expanded="true" />
+            <element signature="e#1626#1730#0#HTML" expanded="true" />
+            <marker date="1525105549812" expanded="false" signature="4000:4015" ph="..." />
           </folding>
         </state>
       </provider>

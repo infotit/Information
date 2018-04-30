@@ -7,6 +7,81 @@ from info.utils.response_code import RET
 from . import news_blu
 
 
+@news_blu.route('/user_follow', methods=["POST", "GET"])
+@user_login_data
+def user_follow():
+    user = g.user
+    if request.method == "GET":
+        page = request.args.get("page", 1)
+        try:
+            p = int(page)
+        except Exception as e:
+            current_app.logger.error(e)
+            page = 1
+
+        follows = []
+        current_page = 1
+        total_page = 1
+        try:
+            paginate = user.followed.paginate(p, constants.USER_FOLLOWED_MAX_COUNT, False)
+            follows = paginate.items
+            current_page = paginate.page
+            total_page = paginate.pages
+        except Exception as e:
+            current_app.logger.error(e)
+
+        user_dict_list = []
+
+        for follow_user in follows:
+            user_dict_list.append(follow_user.to_dict())
+        data = {"users": user_dict_list,
+                "total_page": total_page,
+                "current_page": current_page}
+        return render_template('news/user_follow.html', data=data)
+
+    if not g.user:
+        return jsonify(errno=RET.SESSIONERR, errmsg="用户未登录")
+
+    user_id = request.json.get("user_id")
+    action = request.json.get("action")
+
+    if not all([user_id, action]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    if action not in ("follow", "unfollow"):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    # 查询到关注的用户信息
+    try:
+        target_user = User.query.get(user_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询数据库失败")
+
+    if not target_user:
+        return jsonify(errno=RET.NODATA, errmsg="未查询到用户数据")
+
+    # 根据不同操作做不同逻辑
+    if action == "follow":
+        if target_user.followers.filter(User.id == g.user.id).count() > 0:
+            return jsonify(errno=RET.DATAEXIST, errmsg="当前已关注")
+        target_user.followers.append(g.user)
+    else:
+        if target_user.followers.filter(User.id == g.user.id).count() > 0:
+            target_user.followers.remove(g.user)
+
+    # 保存到数据库
+    try:
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据保存错误")
+
+    return jsonify(errno=RET.OK, errmsg="操作成功")
+
+
+
+
 @news_blu.route('/<int:news_id>')
 @user_login_data
 def news_detail(news_id):
@@ -63,12 +138,18 @@ def news_detail(news_id):
             comment_dict['is_like'] = True
         comment_dict_list.append(comment_dict)
 
+    is_followed = False
+    if news.user and user:
+        if news.user in user.followed:
+            is_followed = True
+
     data = {
         "user": user.to_dict() if user else None,
         "news_dict_list": news_dict_list,
         "news": news.to_dict(),
         "is_collected": is_collected,
-        "comments": comment_dict_list
+        "comments": comment_dict_list,
+        "is_followed": is_followed
     }
 
     return render_template('news/detail.html', data=data)
@@ -110,7 +191,7 @@ def collect_news():
         if news not in user.collection_news:
             user.collection_news.append(news)
 
-    return jsonify(errno=RET.OK, errmsg="保存成功", )
+    return jsonify(errno=RET.OK, errmsg="保存成功")
 
 
 @news_blu.route('/news_comment', methods=["POST"])

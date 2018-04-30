@@ -1,4 +1,4 @@
-from flask import render_template, g, redirect, url_for, jsonify, request, current_app
+from flask import render_template, g, redirect, url_for, jsonify, request, current_app, abort
 
 from info import db, constants
 from info.models import News, User, Category
@@ -6,6 +6,74 @@ from info.utils.common import user_login_data
 from info.utils.image_storage import image_storage
 from info.utils.response_code import RET
 from . import profile_blu
+
+
+@profile_blu.route('/other_news_list')
+def other_news_list():
+    other_id = request.args.get("user_id")
+    page = request.args.get("page")
+
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    try:
+        other = User.query.get(other_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据查询失败")
+
+    if not other:
+        return jsonify(errno=RET.NODATA, errmsg="用户不存在")
+
+    try:
+        paginate = other.news_list.paginate(page, constants.USER_COLLECTION_MAX_NEWS, False)
+        current_page = paginate.page
+        total_page = paginate.pages
+        other_news_list = paginate.items
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询错误")
+
+    other_dict_list = []
+    for news_item in other_news_list:
+        other_dict_list.append(news_item.to_basic_dict())
+
+    data = {
+        "news_list": other_dict_list,
+        "current_page": current_page,
+        "total_page": total_page,
+    }
+    return jsonify(errno=RET.OK, errmsg="OK", data=data)
+
+
+@profile_blu.route('/other_info')
+@user_login_data
+def other_info():
+    user = g.user
+    other_id = request.args.get("user_id")
+    if not other_id:
+        abort(404)
+    try:
+        other = User.query.get(other_id)
+    except Exception as e:
+        current_app.logger.error(e)
+
+    if not other:
+        abort(404)
+
+    is_followed = False
+    if other and user:
+        if other in user.followed:
+            is_followed = True
+
+    data = {"user": user.to_dict() if g.user else None,
+            "other_info": other.to_dict(),
+            "is_followed": is_followed
+            }
+    return render_template('news/other.html', data=data)
 
 
 @profile_blu.route('/news_list')

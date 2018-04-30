@@ -11,6 +11,48 @@ from info.utils.response_code import RET
 from . import admin_blu
 
 
+@admin_blu.route('/news_type', methods=["POST", "GET"])
+def news_type():
+    if request.method == "GET":
+        try:
+            categories = Category.query.all()
+        except Exception as e:
+            current_app.logger.error(e)
+            return render_template('admin/news_type.html', errmsg='查询数据错误')
+
+        category_dict_list = []
+        for category in categories:
+            category_dict_list.append(category.to_dict())
+        category_dict_list.pop(0)
+        data = {
+            "categories": category_dict_list
+        }
+        return render_template('admin/news_type.html', data=data)
+
+    category_name = request.json.get("name")
+    category_id = request.json.get("id")
+
+    if not category_name:
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    if category_id:
+        try:
+            category_id = int(category_id)
+            category = Category.query.get(category_id)
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.DBERR, errmsg="查询错误")
+
+        if not category:
+            return jsonify(errno=RET.NODATA, errmsg="未查询到分类数据")
+        category.name = category_name
+    else:
+        category = Category()
+        category.name = category_name
+        db.session.add(category)
+
+    return jsonify(errno=RET.OK, errmsg="OK")
+
 @admin_blu.route('/news_edit_detail', methods=["POST", "GET"])
 def news_edit_detail():
     if request.method == "GET":
@@ -21,10 +63,12 @@ def news_edit_detail():
         try:
             news_id = int(news_id)
         except Exception as e:
+            current_app.logger.error(e)
             return render_template('admin/news_edit_detail.html', errmsg='参数错误')
         try:
             news = News.query.get(news_id)
         except Exception as e:
+            current_app.logger.error(e)
             return render_template('admin/news_edit_detail.html', errmsg='查询错误')
 
         if not news:
@@ -33,6 +77,7 @@ def news_edit_detail():
         try:
             categories = Category.query.all()
         except Exception as e:
+            current_app.logger.error(e)
             return jsonify(errno=RET.DBERR, errmsg="查询错误")
 
         category_dict_list = []
@@ -225,9 +270,6 @@ def news_review():
                "news_list": news_dict_list}
 
     return render_template('admin/news_review.html', data=context)
-
-
-
 
 
 @admin_blu.route('/user_list')

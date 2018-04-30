@@ -52,7 +52,7 @@
               <folding>
                 <element signature="e#1392#1496#0#HTML" expanded="true" />
                 <element signature="e#1626#1730#0#HTML" expanded="true" />
-                <marker date="1525105549812" expanded="false" signature="4000:4015" ph="..." />
+                <marker date="1525106115387" expanded="false" signature="4000:4015" ph="..." />
               </folding>
             </state>
           </provider>
@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/info/static/news/js/other.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="333">
-              <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -72,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/info/templates/news/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
             <state relative-caret-position="1033">
               <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
-                <marker date="1525104036696" expanded="false" signature="0:334" ph="import ..." />
+                <marker date="1525106115307" expanded="false" signature="0:334" ph="import ..." />
               </folding>
             </state>
           </provider>
@@ -1144,7 +1144,7 @@
     <entry file="file://$PROJECT_DIR$/info/templates/news/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1154,7 +1154,7 @@
         <state relative-caret-position="1033">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
-            <marker date="1525104036696" expanded="false" signature="0:334" ph="import ..." />
+            <marker date="1525106115307" expanded="false" signature="0:334" ph="import ..." />
           </folding>
         </state>
       </provider>
@@ -1166,7 +1166,7 @@
           <folding>
             <element signature="e#1392#1496#0#HTML" expanded="true" />
             <element signature="e#1626#1730#0#HTML" expanded="true" />
-            <marker date="1525105549812" expanded="false" signature="4000:4015" ph="..." />
+            <marker date="1525106115387" expanded="false" signature="4000:4015" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1181,7 +1181,7 @@
     <entry file="file://$PROJECT_DIR$/info/static/news/js/other.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding />
         </state>
       </provider>
